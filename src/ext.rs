@@ -19,6 +19,7 @@ use {TcpBuilder, UdpBuilder, FromInner};
 use sys;
 use sys::c;
 use socket;
+use core::convert::TryInto;
 
 cfg_if! {
     if #[cfg(any(target_os = "dragonfly",

@@ -14,6 +14,7 @@ use std::mem;
 use std::net::{TcpListener, TcpStream, UdpSocket};
 use std::os::unix::io::FromRawFd;
 use sgx_libc::c_int;
+use core::convert::TryInto;
 //#[cfg(not(any(target_os = "solaris", target_os = "emscripten")))]
 //use sgx_libc::{ioctl, FIOCLEX};
 
