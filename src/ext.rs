@@ -1323,7 +1323,7 @@ fn set_nonblocking(sock: Socket, nonblocking: bool) -> io::Result<()> {
 fn set_nonblocking(sock: Socket, nonblocking: bool) -> io::Result<()> {
     let mut nonblocking = nonblocking as c_int;
     ::cvt(unsafe {
-        c::ioctl_arg1(sock, FIONBIO, &mut nonblocking)
+        c::ioctl_arg1(sock, FIONBIO.try_into().unwrap(), &mut nonblocking)
     }).map(|_| ())
 }
 

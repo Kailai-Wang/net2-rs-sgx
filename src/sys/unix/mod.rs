@@ -68,7 +68,7 @@ impl Socket {
             }
 
             let fd = ::cvt(libc::socket(family, ty, 0))?;
-            libc::ioctl_arg0(fd, c::FIOCLEX);
+            libc::ioctl_arg0(fd, c::FIOCLEX.try_into().unwrap());
             Ok(Socket { fd: fd })
         }
     }
