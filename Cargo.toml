@@ -18,8 +18,8 @@ exclude = ["/sgx/*"]
 #[target.'cfg(any(target_os="redox", unix, target_os="wasi"))'.dependencies]
 #libc = "0.2.54"
 [target.'cfg(not(target_env = "sgx"))'.dependencies]
-sgx_libc = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", branch = "v2.0.0-preview-11-17", optional = true }
-sgx_tstd = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", branch = "v2.0.0-preview-11-17", features = ["net"], optional = true }
+sgx_libc = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", branch = "v2.0.0-preview", optional = true }
+sgx_tstd = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", branch = "v2.0.0-preview", features = ["net"], optional = true }
 
 [dependencies]
 cfg-if = "0.1"
